@@ -1,13 +1,20 @@
-// COLORS
-$primary-color: #02aab0;
-$secondary-color: #00cdac;
+// COLORS — professional palette
+$primary-color: #1e3c72; // Deep navy
+$secondary-color: #2a5298; // Steel blue
 
 $white-color: #fff;
 
-$dark-grey: #333333;
-$light-grey: #d2d2d2;
+$dark-grey: #1f2933; // Slate charcoal
+$light-grey: #e4e7eb;
 
-$dark-blue-text: #272341; // For Headings
+$dark-blue-text: #1f2937; // For Headings
+
+// DARK THEME
+$dark-bg: #0f172a; // Main dark background (slate 900)
+$dark-bg-alt: #111c33; // Slightly raised dark surface
+$dark-text: #e2e8f0; // Light body text on dark
+$dark-heading: #f8fafc; // Light headings on dark
+$dark-accent: #60a5fa; // Bright blue accent for dark mode
 
 // FONT SIZE
 $default-font-size: 1.6rem;

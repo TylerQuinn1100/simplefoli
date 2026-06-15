@@ -1,0 +1,128 @@
+// =========================================================
+//  DARK THEME
+//  Activated by adding `.dark-theme` to <body>.
+//  Light sections (hero, projects) become dark surfaces;
+//  the already-dark gradient sections (about, contact) are
+//  deepened for better contrast.
+// =========================================================
+
+.dark-theme {
+  background-color: $dark-bg;
+  color: $dark-text;
+
+  // Hero — was white with dark text
+  #hero {
+    background: $dark-bg;
+    color: $dark-text;
+  }
+
+  // Projects — was white with dark text
+  #projects {
+    background-color: $dark-bg;
+    color: $dark-text;
+
+    .project-wrapper__text-title {
+      color: $dark-heading;
+    }
+
+    .project-wrapper__text p > a {
+      color: $dark-accent;
+    }
+  }
+
+  // Headings that use the dark-blue helper need to flip to light
+  .dark-blue-text {
+    color: $dark-heading !important;
+  }
+
+  // Deepen the gradient sections for a richer dark look
+  #about,
+  #contact {
+    background-image: linear-gradient(135deg, #16223f 0%, #1e3a6e 100%);
+  }
+
+  // Footer stays dark — nudge it to match the palette
+  .footer {
+    background-color: $dark-bg-alt;
+
+    .social-links a,
+    .back-to-top {
+      background-color: $dark-bg-alt;
+    }
+  }
+
+  // Accent text (gradient fill) fallback colour on small screens
+  .text-color-main {
+    -webkit-text-fill-color: $dark-accent;
+  }
+
+  // Scrollbar
+  ::-webkit-scrollbar-track {
+    background: $dark-bg-alt;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: lighten($dark-bg-alt, 12%);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: $dark-accent;
+  }
+}
+
+// =========================================================
+//  THEME TOGGLE BUTTON
+// =========================================================
+.theme-toggle {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $primary-color;
+  color: $white-color;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, background 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  // Show the correct icon depending on the active theme
+  .icon-sun {
+    display: none;
+  }
+  .icon-moon {
+    display: inline-block;
+  }
+
+  .dark-theme & {
+    background: $dark-accent;
+    color: $dark-bg;
+
+    .icon-sun {
+      display: inline-block;
+    }
+    .icon-moon {
+      display: none;
+    }
+  }
+
+  @include respond(phone) {
+    top: 1.2rem;
+    right: 1.2rem;
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.6rem;
+  }
+}
